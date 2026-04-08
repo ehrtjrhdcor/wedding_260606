@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-
 // 현재 이미지 인덱스
 let currentImageIndex = 0;
 const totalImages = 9;
