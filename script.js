@@ -885,35 +885,27 @@ document.addEventListener('keydown', function(event) {
 
 // 지도 앱 열기
 function openKakaoMap() {
-    // 실제 장소 좌표로 변경하세요
-    const placeName = '순천아모르웨딩컨벤션';
+    const placeName = '광주 홀리데이인 웨딩홀';
     const url = `https://map.kakao.com/link/search/${encodeURIComponent(placeName)}`;
     window.open(url, '_blank');
 }
 
 function openNaverMap() {
-    // 순천아모르웨딩컨벤션
-    const placeName = '순천아모르웨딩컨벤션';
-    const address = '전남 순천시 서면 압곡길 94';
+    const placeName = '광주 홀리데이인 웨딩홀';
     const url = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
     window.open(url, '_blank');
 }
 
 function openTmap() {
-    // 구글 지도로 변경 (티맵 대체)
-    const placeName = '순천아모르웨딩컨벤션';
-    const address = '전남 순천시 서면 압곡길 94';
-
-    // 구글 지도 검색 URL (모바일/PC 모두 작동)
+    const placeName = '광주 홀리데이인 웨딩홀';
     const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeName)}`;
     window.open(googleMapUrl, '_blank');
 }
 
 function openKakaoNavi() {
-    // 순천아모르웨딩컨벤션 좌표
-    const placeName = '순천아모르웨딩컨벤션';
-    const latitude = 34.982261;  // 위도
-    const longitude = 127.518579; // 경도
+    const placeName = '광주 홀리데이인 웨딩홀';
+    const latitude = 35.1548;  // 위도 (확인 필요)
+    const longitude = 126.8497; // 경도 (확인 필요)
     // 카카오내비 앱 스킴 (좌표로 목적지 설정)
     const kakaoNaviUrl = `kakaomap://route?ep=${latitude},${longitude}&by=CAR`;
 
@@ -1498,7 +1490,7 @@ function initCountdown() {
     
     if (!countdownDays || !countdownHours || !countdownMinutes || !countdownSeconds) return;
 
-    // 결혼식 날짜: 2026년 1월 11일 오전 11시
+    // 결혼식 날짜: 2026년 6월 6일 오전 11시
     const weddingDate = new Date('2026-06-06T11:00:00');
     
     function updateCountdown() {
@@ -1553,9 +1545,8 @@ function initNaverMap() {
         return;
     }
 
-    // 순천아모르웨딩컨벤션 좌표 (전남 순천시 서면 압곡길 94)
-    // 좌표: 위도(latitude), 경도(longitude) 순서
-    const weddingLocation = new naver.maps.LatLng(34.982261, 127.518579);
+    // 광주 홀리데이인 웨딩홀 좌표 (확인 필요)
+    const weddingLocation = new naver.maps.LatLng(35.1548, 126.8497);
 
     // 지도 옵션
     const mapOptions = {
@@ -1574,14 +1565,14 @@ function initNaverMap() {
     const marker = new naver.maps.Marker({
         position: weddingLocation,
         map: map,
-        title: '순천아모르웨딩컨벤션'
+        title: '광주 홀리데이인 웨딩홀'
     });
 
     // 정보창 내용
     const contentString = [
         '<div style="padding:10px;min-width:200px;line-height:1.5;">',
-        '   <h4 style="margin:0 0 10px 0;font-size:16px;font-weight:bold;">순천아모르웨딩컨벤션</h4>',
-        '   <p style="margin:0;font-size:13px;color:#666;">전남 순천시 서면 압곡길 94</p>',
+        '   <h4 style="margin:0 0 10px 0;font-size:16px;font-weight:bold;">광주 홀리데이인 웨딩홀</h4>',
+        '   <p style="margin:0;font-size:13px;color:#666;">광주광역시 서구 상무누리로55</p>',
         '   <p style="margin:5px 0 0 0;font-size:13px;color:#666;">Tel. 061-752-1000</p>',
         '</div>'
     ].join('');
@@ -1624,8 +1615,8 @@ function shareKakao() {
     Kakao.Share.sendDefault({
         objectType: 'feed',
         content: {
-            title: '장원석 ♡ 김한비 결혼식에 초대합니다.',
-            description: '2026년 1월 11일 일요일 오전 11시 \n순천아모르웨딩컨벤션 1층 엘르홀',
+            title: '김창섭 ♡ 이소정 결혼식에 초대합니다.',
+            description: '2026년 6월 6일 토요일 오전 11시 \n광주 홀리데이인 웨딩홀 2층 라벤더홀',
             imageUrl: 'https://ehrtjrhdcor.github.io/wedding_260606/album/1.jpg',
             link: {
                 mobileWebUrl: 'https://ehrtjrhdcor.github.io/wedding_260606/',
