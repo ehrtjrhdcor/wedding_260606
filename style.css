@@ -2097,3 +2097,76 @@ h3.venue-name {
     }
 }
 
+
+/* 비밀번호 확인 모달 */
+.pw-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pw-modal-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px 20px;
+    width: 80%;
+    max-width: 320px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.pw-modal-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+    letter-spacing: 0.03em;
+}
+
+.pw-modal-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+.pw-modal-input:focus {
+    border-color: #b0a090;
+}
+
+.pw-modal-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.pw-modal-btn {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.pw-modal-btn:hover {
+    opacity: 0.8;
+}
+
+.pw-cancel {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.pw-confirm {
+    background: #8a7a6a;
+    color: #fff;
+}

@@ -439,6 +439,18 @@
     </section>
     -->
 
+    <!-- 비밀번호 확인 모달 -->
+    <div id="passwordModal" class="pw-modal" style="display:none;">
+        <div class="pw-modal-box">
+            <p class="pw-modal-title">비밀번호 확인</p>
+            <input type="password" id="pwModalInput" class="pw-modal-input" placeholder="비밀번호를 입력해주세요" maxlength="20">
+            <div class="pw-modal-btns">
+                <button class="pw-modal-btn pw-cancel" id="pwModalCancel">취소</button>
+                <button class="pw-modal-btn pw-confirm" id="pwModalConfirm">확인</button>
+            </div>
+        </div>
+    </div>
+
     <!-- 카카오톡 공유 -->
     <div class="kakao-share-section">
         <button onclick="shareKakao()" class="btn-kakao-share">

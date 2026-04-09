@@ -1278,7 +1278,7 @@ async function deleteMessage(messageId) {
     }
 
     // 비밀번호 확인
-    const password = prompt('비밀번호를 입력해주세요:');
+    const password = await showPasswordModal();
 
     if (password === null) {
         return;
@@ -1302,7 +1302,7 @@ async function deleteMessage(messageId) {
 }
 
 // 방명록 수정 (Firebase)
-function editMessage(messageId) {
+async function editMessage(messageId) {
     const messages = window.allMessages || [];
     const message = messages.find(m => m.id === messageId);
 
@@ -1312,7 +1312,7 @@ function editMessage(messageId) {
     }
 
     // 비밀번호 확인
-    const password = prompt('비밀번호를 입력해주세요:');
+    const password = await showPasswordModal();
 
     if (password === null) {
         return;
@@ -1348,6 +1348,37 @@ function editMessage(messageId) {
         // 폼이 보이도록 스크롤
         form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+}
+
+// 커스텀 비밀번호 입력 모달
+function showPasswordModal() {
+    return new Promise((resolve) => {
+        const modal = document.getElementById('passwordModal');
+        const input = document.getElementById('pwModalInput');
+        const confirmBtn = document.getElementById('pwModalConfirm');
+        const cancelBtn = document.getElementById('pwModalCancel');
+
+        input.value = '';
+        modal.style.display = 'flex';
+        setTimeout(() => input.focus(), 100);
+
+        function cleanup() {
+            modal.style.display = 'none';
+            confirmBtn.removeEventListener('click', onConfirm);
+            cancelBtn.removeEventListener('click', onCancel);
+            input.removeEventListener('keydown', onKeydown);
+        }
+        function onConfirm() { cleanup(); resolve(input.value); }
+        function onCancel() { cleanup(); resolve(null); }
+        function onKeydown(e) {
+            if (e.key === 'Enter') onConfirm();
+            if (e.key === 'Escape') onCancel();
+        }
+
+        confirmBtn.addEventListener('click', onConfirm);
+        cancelBtn.addEventListener('click', onCancel);
+        input.addEventListener('keydown', onKeydown);
+    });
 }
 
 // XSS 방지를 위한 HTML 이스케이프
