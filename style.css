@@ -188,15 +188,12 @@ h2::after {
 }
 
 .frame-3-photo {
-    position: absolute;
+    position: relative;
     width: 90%;
     height: auto;
-    aspect-ratio: 360 / 485;
-    object-fit: cover;
+    display: block;
+    margin: 0 auto;
     z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .hero-content {
