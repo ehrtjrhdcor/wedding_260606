@@ -11,16 +11,25 @@ let displayedMessageCount = 3;
 // Firebase 방명록 전체 데이터 (전역 저장)
 window.allMessages = [];
 const galleryImages = [
-    'album/1.jpg',
-    'album/2.jpg',
-    'album/3.jpg',
-    'album/4.jpg',
-    'album/5.jpg',
-    'album/6.jpg',
-    'album/7.jpg',
-    'album/8.jpg',
-    'album/9.jpg',
-    'album/10.jpg'
+    'album_split/1.jpg',
+    'album_split/2.jpg',
+    'album_split/3.jpg',
+    'album_split/4.jpg',
+    'album_split/5.jpg',
+    'album_split/6.jpg',
+    'album_split/7.jpg',
+    'album_split/8.jpg',
+    'album_split/9.jpg',
+    'album_split/10.jpg',
+    'album_split/11.jpg',
+    'album_split/12.jpg',
+    'album_split/13.jpg',
+    'album_split/14.jpg',
+    'album_split/15.jpg',
+    'album_split/16.jpg',
+    'album_split/17.jpg',
+    'album_split/18.jpg',
+    'album_split/19.jpg'
 ];
 
 let isMusicPlaying = false;
