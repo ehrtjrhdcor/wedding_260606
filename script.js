@@ -311,7 +311,8 @@ function preventGalleryImageDownload() {
         let touchStartY = 0;
         let isLongPress = false;
         let longPressTimer = null;
-        
+        let hasMoved = false;
+
         // touchstart - 터치 시작
         overlay.addEventListener('touchstart', function(event) {
             touchStartTime = Date.now();
@@ -319,6 +320,7 @@ function preventGalleryImageDownload() {
             touchStartX = touch.clientX;
             touchStartY = touch.clientY;
             isLongPress = false;
+            hasMoved = false;
             
             // 멀티터치 방지
             if (event.touches.length > 1) {
@@ -346,14 +348,15 @@ function preventGalleryImageDownload() {
                 clearTimeout(longPressTimer);
                 longPressTimer = null;
             }
-            
+
             const touch = event.touches[0];
             const deltaX = Math.abs(touch.clientX - touchStartX);
             const deltaY = Math.abs(touch.clientY - touchStartY);
-            
-            // 10px 이상 움직이면 길게 누르기 취소
+
+            // 10px 이상 움직이면 스크롤로 판단
             if (deltaX > 10 || deltaY > 10) {
                 isLongPress = false;
+                hasMoved = true;
             }
         }, { passive: false });
         
@@ -374,8 +377,8 @@ function preventGalleryImageDownload() {
                 return false;
             }
             
-            // 매우 짧은 터치(클릭)만 부모 요소의 onclick으로 전달
-            if (touchDuration < 100 && !isLongPress) {
+            // 스크롤이 아닌 짧은 탭만 클릭으로 전달
+            if (touchDuration < 100 && !isLongPress && !hasMoved) {
                 // 약간의 지연 후 클릭 이벤트 전달 (이미지 다운로드 메뉴가 나타나기 전에)
                 setTimeout(function() {
                     const clickEvent = new MouseEvent('click', {
