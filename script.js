@@ -926,8 +926,8 @@ function openTmap() {
 
 function openKakaoNavi() {
     const placeName = '광주 홀리데이인 웨딩홀';
-    const latitude = 35.1548;  // 위도 (확인 필요)
-    const longitude = 126.8497; // 경도 (확인 필요)
+    const latitude = 35.147748;
+    const longitude = 126.838100;
     // 카카오내비 앱 스킴 (좌표로 목적지 설정)
     const kakaoNaviUrl = `kakaomap://route?ep=${latitude},${longitude}&by=CAR`;
 
