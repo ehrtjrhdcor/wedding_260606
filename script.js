@@ -615,6 +615,7 @@ function openModal(index) {
 
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    history.pushState({ modal: true }, '');
     
     // 모바일 이미지 확대 방지
     preventImageZoom(modal);
@@ -866,9 +867,21 @@ function preventImageCapture(modal, modalImg) {
 
 function closeModal() {
     const modal = document.getElementById('imageModal');
+    if (modal.style.display === 'none') return;
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
+    if (history.state && history.state.modal) {
+        history.back();
+    }
 }
+
+window.addEventListener('popstate', function(e) {
+    const modal = document.getElementById('imageModal');
+    if (modal && modal.style.display !== 'none') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
 
 function changeImage(direction) {
     currentImageIndex += direction;
