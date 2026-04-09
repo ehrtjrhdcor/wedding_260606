@@ -1568,7 +1568,7 @@ function initNaverMap() {
     }
 
     // 광주 홀리데이인 웨딩홀 좌표 (확인 필요)
-    const weddingLocation = new naver.maps.LatLng(35.1548, 126.8497);
+    const weddingLocation = new naver.maps.LatLng(35.147748, 126.838100);
 
     // 지도 옵션
     const mapOptions = {
