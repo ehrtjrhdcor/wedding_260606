@@ -1610,7 +1610,7 @@ function initNaverMap() {
 
 // Kakao SDK 초기화
 if (typeof Kakao !== 'undefined' && !Kakao.isInitialized()) {
-    Kakao.init('a23deef6d95570902f15e2c58fe9a3af');
+    Kakao.init('bbd128fdd7b2655771f9e875ed0a8c73');
     console.log('Kakao SDK 초기화 완료:', Kakao.isInitialized());
 }
 
@@ -1626,7 +1626,7 @@ function shareKakao() {
         content: {
             title: '김창섭 ♡ 이소정 결혼식에 초대합니다.',
             description: '2026년 6월 6일 토요일 오전 11시 \n광주 홀리데이인 웨딩홀 2층 라벤더홀',
-            imageUrl: 'https://ehrtjrhdcor.github.io/wedding_260606/album/1.jpg',
+            imageUrl: 'https://ehrtjrhdcor.github.io/wedding_260606/album_split/12.jpg',
             link: {
                 mobileWebUrl: 'https://ehrtjrhdcor.github.io/wedding_260606/',
                 webUrl: 'https://ehrtjrhdcor.github.io/wedding_260606/',
