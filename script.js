@@ -1,6 +1,6 @@
 // 현재 이미지 인덱스
 let currentImageIndex = 0;
-const totalImages = 9;
+const totalImages = 19;
 
 // 방명록 수정 모드 (Firebase용 - messageId 저장)
 let editingMessageId = null;
